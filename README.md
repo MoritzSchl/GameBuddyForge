@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="image/logo2-Kopie.png" width="200">
+  <img src="image/logo2-Kopie.png" width="400">
 </p>
 
 # 🎮 GameBuddyForge - From Gamer for Gamer! 🎮
