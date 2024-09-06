@@ -14,7 +14,7 @@
 		E4CFA9BF2C8AFE1600F69D9D /* GameBuddyForgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9BE2C8AFE1600F69D9D /* GameBuddyForgeTests.swift */; };
 		E4CFA9C92C8AFE1700F69D9D /* GameBuddyForgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9C82C8AFE1700F69D9D /* GameBuddyForgeUITests.swift */; };
 		E4CFA9CB2C8AFE1700F69D9D /* GameBuddyForgeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9CA2C8AFE1700F69D9D /* GameBuddyForgeUITestsLaunchTests.swift */; };
-		E4CFA9D92C8B13FF00F69D9D /* logo2 Kopie.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CFA9D82C8B13FF00F69D9D /* logo2 Kopie.png */; };
+		E4CFA9D92C8B13FF00F69D9D /* logo2-Kopie.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CFA9D82C8B13FF00F69D9D /* logo2-Kopie.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,7 @@
 		E4CFA9C42C8AFE1700F69D9D /* GameBuddyForgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameBuddyForgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CFA9C82C8AFE1700F69D9D /* GameBuddyForgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuddyForgeUITests.swift; sourceTree = "<group>"; };
 		E4CFA9CA2C8AFE1700F69D9D /* GameBuddyForgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuddyForgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E4CFA9D82C8B13FF00F69D9D /* logo2 Kopie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo2 Kopie.png"; sourceTree = "<group>"; };
+		E4CFA9D82C8B13FF00F69D9D /* logo2-Kopie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo2-Kopie.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,7 @@
 		E4CFA9D72C8B13E600F69D9D /* image */ = {
 			isa = PBXGroup;
 			children = (
-				E4CFA9D82C8B13FF00F69D9D /* logo2 Kopie.png */,
+				E4CFA9D82C8B13FF00F69D9D /* logo2-Kopie.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 			files = (
 				E4CFA9B52C8AFE1600F69D9D /* Preview Assets.xcassets in Resources */,
 				E4CFA9B22C8AFE1600F69D9D /* Assets.xcassets in Resources */,
-				E4CFA9D92C8B13FF00F69D9D /* logo2 Kopie.png in Resources */,
+				E4CFA9D92C8B13FF00F69D9D /* logo2-Kopie.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
