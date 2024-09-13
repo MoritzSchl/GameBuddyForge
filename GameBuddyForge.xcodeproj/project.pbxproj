@@ -8,13 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		E4CFA9AE2C8AFE1500F69D9D /* GameBuddyForgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9AD2C8AFE1500F69D9D /* GameBuddyForgeApp.swift */; };
-		E4CFA9B02C8AFE1500F69D9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9AF2C8AFE1500F69D9D /* ContentView.swift */; };
+		E4CFA9B02C8AFE1500F69D9D /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9AF2C8AFE1500F69D9D /* GamesListView.swift */; };
 		E4CFA9B22C8AFE1600F69D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CFA9B12C8AFE1600F69D9D /* Assets.xcassets */; };
 		E4CFA9B52C8AFE1600F69D9D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CFA9B42C8AFE1600F69D9D /* Preview Assets.xcassets */; };
 		E4CFA9BF2C8AFE1600F69D9D /* GameBuddyForgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9BE2C8AFE1600F69D9D /* GameBuddyForgeTests.swift */; };
 		E4CFA9C92C8AFE1700F69D9D /* GameBuddyForgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9C82C8AFE1700F69D9D /* GameBuddyForgeUITests.swift */; };
 		E4CFA9CB2C8AFE1700F69D9D /* GameBuddyForgeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9CA2C8AFE1700F69D9D /* GameBuddyForgeUITestsLaunchTests.swift */; };
 		E4CFA9D92C8B13FF00F69D9D /* logo2-Kopie.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CFA9D82C8B13FF00F69D9D /* logo2-Kopie.png */; };
+		E4CFA9DC2C8EE03600F69D9D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9DB2C8EE03600F69D9D /* Game.swift */; };
+		E4CFA9DF2C8EE42B00F69D9D /* GamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9DE2C8EE42B00F69D9D /* GamesViewModel.swift */; };
+		E4CFA9E22C8EEF1300F69D9D /* GamesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9E12C8EEF1300F69D9D /* GamesRepository.swift */; };
+		E4CFA9E52C8F0B0700F69D9D /* GamesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9E42C8F0B0700F69D9D /* GamesRow.swift */; };
+		E4CFA9ED2C90583900F69D9D /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9EC2C90583900F69D9D /* GameDetailView.swift */; };
+		E4CFA9F02C91A52300F69D9D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9EF2C91A52300F69D9D /* OnboardingView.swift */; };
+		E4CFA9F22C91A74E00F69D9D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9F12C91A74E00F69D9D /* LogInView.swift */; };
+		E4CFA9F62C94381600F69D9D /* Sharpie-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4CFA9F52C94381600F69D9D /* Sharpie-Bold.otf */; };
+		E4CFA9F72C94381600F69D9D /* Sharpie-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4CFA9F52C94381600F69D9D /* Sharpie-Bold.otf */; };
+		E4CFA9F82C94381600F69D9D /* Sharpie-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E4CFA9F52C94381600F69D9D /* Sharpie-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +47,7 @@
 /* Begin PBXFileReference section */
 		E4CFA9AA2C8AFE1500F69D9D /* GameBuddyForge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameBuddyForge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CFA9AD2C8AFE1500F69D9D /* GameBuddyForgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuddyForgeApp.swift; sourceTree = "<group>"; };
-		E4CFA9AF2C8AFE1500F69D9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E4CFA9AF2C8AFE1500F69D9D /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
 		E4CFA9B12C8AFE1600F69D9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4CFA9B42C8AFE1600F69D9D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4CFA9BA2C8AFE1600F69D9D /* GameBuddyForgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameBuddyForgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +56,14 @@
 		E4CFA9C82C8AFE1700F69D9D /* GameBuddyForgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuddyForgeUITests.swift; sourceTree = "<group>"; };
 		E4CFA9CA2C8AFE1700F69D9D /* GameBuddyForgeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuddyForgeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E4CFA9D82C8B13FF00F69D9D /* logo2-Kopie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo2-Kopie.png"; sourceTree = "<group>"; };
+		E4CFA9DB2C8EE03600F69D9D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E4CFA9DE2C8EE42B00F69D9D /* GamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewModel.swift; sourceTree = "<group>"; };
+		E4CFA9E12C8EEF1300F69D9D /* GamesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesRepository.swift; sourceTree = "<group>"; };
+		E4CFA9E42C8F0B0700F69D9D /* GamesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesRow.swift; sourceTree = "<group>"; };
+		E4CFA9EC2C90583900F69D9D /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
+		E4CFA9EF2C91A52300F69D9D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		E4CFA9F12C91A74E00F69D9D /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		E4CFA9F52C94381600F69D9D /* Sharpie-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sharpie-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +115,12 @@
 		E4CFA9AC2C8AFE1500F69D9D /* GameBuddyForge */ = {
 			isa = PBXGroup;
 			children = (
+				E4CFA9F42C9437F500F69D9D /* Font */,
 				E4CFA9AD2C8AFE1500F69D9D /* GameBuddyForgeApp.swift */,
-				E4CFA9AF2C8AFE1500F69D9D /* ContentView.swift */,
+				E4CFA9E32C8F07F300F69D9D /* View */,
+				E4CFA9E02C8EEF0200F69D9D /* Repository */,
+				E4CFA9DD2C8EE41A00F69D9D /* Viewmodel */,
+				E4CFA9DA2C8EE02200F69D9D /* Model */,
 				E4CFA9B12C8AFE1600F69D9D /* Assets.xcassets */,
 				E4CFA9B32C8AFE1600F69D9D /* Preview Content */,
 			);
@@ -136,6 +158,58 @@
 				E4CFA9D82C8B13FF00F69D9D /* logo2-Kopie.png */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		E4CFA9DA2C8EE02200F69D9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4CFA9DB2C8EE03600F69D9D /* Game.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E4CFA9DD2C8EE41A00F69D9D /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				E4CFA9DE2C8EE42B00F69D9D /* GamesViewModel.swift */,
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
+		E4CFA9E02C8EEF0200F69D9D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E4CFA9E12C8EEF1300F69D9D /* GamesRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E4CFA9E32C8F07F300F69D9D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4CFA9F32C94342800F69D9D /* Components */,
+				E4CFA9AF2C8AFE1500F69D9D /* GamesListView.swift */,
+				E4CFA9EC2C90583900F69D9D /* GameDetailView.swift */,
+				E4CFA9EF2C91A52300F69D9D /* OnboardingView.swift */,
+				E4CFA9F12C91A74E00F69D9D /* LogInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E4CFA9F32C94342800F69D9D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E4CFA9E42C8F0B0700F69D9D /* GamesRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E4CFA9F42C9437F500F69D9D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				E4CFA9F52C94381600F69D9D /* Sharpie-Bold.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4CFA9B52C8AFE1600F69D9D /* Preview Assets.xcassets in Resources */,
+				E4CFA9F62C94381600F69D9D /* Sharpie-Bold.otf in Resources */,
 				E4CFA9B22C8AFE1600F69D9D /* Assets.xcassets in Resources */,
 				E4CFA9D92C8B13FF00F69D9D /* logo2-Kopie.png in Resources */,
 			);
@@ -252,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4CFA9F72C94381600F69D9D /* Sharpie-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4CFA9F82C94381600F69D9D /* Sharpie-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +346,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4CFA9B02C8AFE1500F69D9D /* ContentView.swift in Sources */,
+				E4CFA9E22C8EEF1300F69D9D /* GamesRepository.swift in Sources */,
+				E4CFA9ED2C90583900F69D9D /* GameDetailView.swift in Sources */,
+				E4CFA9DF2C8EE42B00F69D9D /* GamesViewModel.swift in Sources */,
+				E4CFA9E52C8F0B0700F69D9D /* GamesRow.swift in Sources */,
+				E4CFA9B02C8AFE1500F69D9D /* GamesListView.swift in Sources */,
+				E4CFA9F02C91A52300F69D9D /* OnboardingView.swift in Sources */,
+				E4CFA9F22C91A74E00F69D9D /* LogInView.swift in Sources */,
+				E4CFA9DC2C8EE03600F69D9D /* Game.swift in Sources */,
 				E4CFA9AE2C8AFE1500F69D9D /* GameBuddyForgeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
