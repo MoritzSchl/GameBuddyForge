@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="image/logo2-Kopie.png" width="400">
+</p>
+
 # 🎮 GameBuddyForge - From Gamer for Gamer! 🎮
 
 Willkommen bei **GameBuddyForge** – Der ultimativen App für Gamer, die zusammen spielen wollen! Ob League of Legends, Fortnite oder andere Spiele – Mit GameBuddyForge findest du schnell und einfach Mitspieler für deine Lieblingsspiele. 💪
