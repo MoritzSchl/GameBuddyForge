@@ -19,35 +19,35 @@ struct LoginView: View {
                 .frame(width: 200, height: 200)
                 .padding(.bottom, 20)
             Text("GAME BUDDY FORGE")
-                .font(.system(size: 28, weight: .bold))
+                .font(.custom("Tanker", size: 35))
                 .foregroundColor(.white)
                 .bold()
             Text("From Gamers For Gamers")
-                .font(.system(size: 16))
+                .font(.custom("Tanker", size: 35))
                 .foregroundColor(.white)
                 .padding(.bottom, 20)
                 .bold()
             TextField("Email", text: $email)
                 .padding()
-                .background(Color.elOrango)
+                .background(Color("elOrango"))
                 .cornerRadius(8)
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
                 .padding(.horizontal)
             SecureField("Passwort", text: $password)
+                .foregroundStyle(Color(.white))
                 .padding()
-                .background(Color.elOrango)
+                .background(Color("elOrango"))
                 .cornerRadius(8)
-                .foregroundColor(.black)
                 .padding(.horizontal)
             Spacer()
             Button(action: {
             }) {
-                Text("Login")
-                    .font(.headline)
+                Text("Log In")
+                    .font(.custom("Tanker", size: 20))
                     .foregroundColor(.white)
-                    .frame(width: 220, height: 50)
+                    .frame(width: 110, height: 50)
                     .background(
-                        Color.elOrango
+                        Color("elOrango")
                             .cornerRadius(10)
                     )
                     .overlay(
@@ -58,17 +58,17 @@ struct LoginView: View {
             Button(action: {
             }) {
                 Text("Passwort vergessen")
-                    .font(.subheadline)
+                    .font(.custom("Tanker", size: 20))
                     .foregroundColor(.white)
             }
             Button(action: {
             }) {
                 Text("Sign Up")
-                    .font(.headline)
+                    .font(.custom("Tanker", size: 20))
                     .foregroundColor(.white)
                     .frame(width: 110, height: 50)
                     .background(
-                        Color.elOrango
+                        Color("elOrango")
                             .cornerRadius(10)
                     )
                     .overlay(
@@ -79,7 +79,7 @@ struct LoginView: View {
             
             Spacer()
         }
-        .background(Color.myGray.edgesIgnoringSafeArea(.all))
+        .background(Color("myGray").edgesIgnoringSafeArea(.all))
     }
 }
 

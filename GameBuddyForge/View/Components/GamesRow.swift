@@ -44,7 +44,7 @@ struct GamesRow: View {
                         .font(.caption)
                         .foregroundColor(.white)
                         .padding(6)
-                        .background(Color.black.opacity(0.6))
+                        .background(Color("elOrango").opacity(0.6))
                         .cornerRadius(5)
                         .padding(.leading, 8)
                     
@@ -54,7 +54,7 @@ struct GamesRow: View {
                         .font(.caption)
                         .foregroundColor(.white)
                         .padding(6)
-                        .background(Color.black.opacity(0.6))
+                        .background(Color("elOrango").opacity(0.6))
                         .cornerRadius(5)
                         .padding(.trailing, 8)
                 }

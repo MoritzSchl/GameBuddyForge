@@ -20,16 +20,22 @@ struct GamesListView: View {
                 ScrollView {
                     VStack(spacing: 16) {
                         ForEach(viewModel.games) { game in
-                            GamesRow(game: game)
-                                .cornerRadius(10)
-                                .shadow(radius: 5)
-                                .padding(.horizontal)
+                            NavigationLink(value:game){
+                                GamesRow(game: game)
+                                    .cornerRadius(10)
+                                    .shadow(radius: 5)
+                                    .padding(.horizontal)
+                            }
                         }
                     }
                     .padding(.vertical,16)
                 }
             }
-            .background(.myGray)
+            .scrollContentBackground(.hidden)
+            .background(Color("myGray"))
+            .navigationDestination(for: Game.self){ game in
+                GameDetailView(game: game)
+            }
         }
     }
 }
