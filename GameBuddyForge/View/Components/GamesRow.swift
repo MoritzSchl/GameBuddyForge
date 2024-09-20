@@ -21,11 +21,10 @@ struct GamesRow: View {
                         .clipped()
                         .frame(maxWidth: .infinity, maxHeight: 200)
                 } placeholder: {
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFill()
+                    ProgressView()
                         .frame(maxWidth: .infinity, maxHeight: 200)
-                        .background(Color.gray.opacity(0.3))
+                        .tint(.white)
+
                 }
             } else {
                 Image(systemName: "photo")

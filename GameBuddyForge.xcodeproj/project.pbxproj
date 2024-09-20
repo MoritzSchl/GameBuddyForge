@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4AF311A2C9D877D007DC8B9 /* ThreatSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AF31192C9D877D007DC8B9 /* ThreatSheet.swift */; };
 		E4CFA9AE2C8AFE1500F69D9D /* GameBuddyForgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9AD2C8AFE1500F69D9D /* GameBuddyForgeApp.swift */; };
 		E4CFA9B02C8AFE1500F69D9D /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CFA9AF2C8AFE1500F69D9D /* GamesListView.swift */; };
 		E4CFA9B22C8AFE1600F69D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CFA9B12C8AFE1600F69D9D /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4AF31192C9D877D007DC8B9 /* ThreatSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatSheet.swift; sourceTree = "<group>"; };
 		E4CFA9AA2C8AFE1500F69D9D /* GameBuddyForge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameBuddyForge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CFA9AD2C8AFE1500F69D9D /* GameBuddyForgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuddyForgeApp.swift; sourceTree = "<group>"; };
 		E4CFA9AF2C8AFE1500F69D9D /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				E4CFA9E42C8F0B0700F69D9D /* GamesRow.swift */,
+				E4AF31192C9D877D007DC8B9 /* ThreatSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4AF311A2C9D877D007DC8B9 /* ThreatSheet.swift in Sources */,
 				E4CFA9E22C8EEF1300F69D9D /* GamesRepository.swift in Sources */,
 				E4CFA9ED2C90583900F69D9D /* GameDetailView.swift in Sources */,
 				E4CFA9DF2C8EE42B00F69D9D /* GamesViewModel.swift in Sources */,

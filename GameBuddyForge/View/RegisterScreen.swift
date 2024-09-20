@@ -30,7 +30,7 @@ struct RegisterView: View {
                 // Username Field
                 TextField("Username", text: $username)
                     .padding()
-                    .background(Color("elOrango"))
+                    .background(Color.white)
                     .cornerRadius(8)
                     .foregroundColor(.white)
                     .padding(.horizontal)
@@ -40,7 +40,7 @@ struct RegisterView: View {
                 // Password Field
                 SecureField("Password", text: $password)
                     .padding()
-                    .background(Color("elOrango"))
+                    .background(Color.white)
                     .cornerRadius(8)
                     .foregroundColor(.white)
                     .padding(.horizontal)
@@ -48,10 +48,12 @@ struct RegisterView: View {
                 // Confirm Password Field
                 SecureField("Confirm Password", text: $confirmPassword)
                     .padding()
-                    .background(Color("elOrango"))
+                    .background(Color.white)
                     .cornerRadius(8)
                     .foregroundColor(.white)
                     .padding(.horizontal)
+                
+                
 
                 Spacer()
 

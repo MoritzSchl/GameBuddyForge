@@ -11,7 +11,7 @@ import SwiftUI
 struct GameBuddyForgeApp: App {
     var body: some Scene {
         WindowGroup {
-            GameDetailView(game: .sample)
+            GamesListView()
         }
     }
 }
