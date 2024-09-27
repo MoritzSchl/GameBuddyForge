@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct GameBuddyForgeApp: App {
+    
+    init(){
+        FirebaseConfiguration.shared.setLoggerLevel(.min)
+        FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
-            GamesListView()
+            if FirebaseAuthManager.shared.isUserSignedIn {
+                GamesListView()
+                    .tint(.white)
+            }else{
+                OnboardingView()
+                    .tint(.white)
+            }
         }
     }
 }

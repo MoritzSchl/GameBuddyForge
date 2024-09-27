@@ -59,9 +59,13 @@ struct GamesRow: View {
                 }
                 .padding(.bottom, 8)
             }
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(.white)
+            )
         }
         .frame(height: 200)
-        .cornerRadius(10)
+        .cornerRadius(20)
         .clipped()
     }
 }

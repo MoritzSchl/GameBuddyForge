@@ -18,8 +18,8 @@ struct GameDetailView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(maxWidth: .infinity)
-                                    .cornerRadius(15)
-                                    .shadow(radius: 10)
+                                    .cornerRadius(20)
+                                    .shadow(color:.elOrango,radius: 20 )
                             } placeholder: {
                                 Image(systemName: "photo")
                                     .resizable()
@@ -27,13 +27,6 @@ struct GameDetailView: View {
                                     .frame(maxWidth: .infinity)
                                     .background(Color.gray.opacity(0.3))
                             }
-                            
-                            LinearGradient(
-                                colors: [.clear, .black.opacity(0.7)],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                            .frame(height: 100)
                         }
                     }
                     

@@ -11,6 +11,13 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     
+    @State private var hasPressedSignIn = false
+    @State private var hasPressedSignUp = false
+    @State private var isShowingSignUp = false
+    
+    @State private var lastErrorMessage = ""
+    @State private var isPresentingError = false
+    
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
@@ -31,17 +38,18 @@ struct LoginView: View {
                 .padding()
                 .background(Color.white)
                 .cornerRadius(8)
-                .foregroundStyle(.white)
+                .foregroundStyle(.black)
                 .padding(.horizontal)
+                .tint(.black)
             SecureField("Passwort", text: $password)
-                .foregroundStyle(Color(.white))
+                .foregroundStyle(Color(.black))
                 .padding()
                 .background(Color.white)
                 .cornerRadius(8)
                 .padding(.horizontal)
+                .tint(.black)
             Spacer()
-            Button(action: {
-            }) {
+            Button(action: attemptSignIn ){
                 Text("Log In")
                     .font(.custom("Tanker", size: 20))
                     .foregroundColor(.white)
@@ -50,6 +58,7 @@ struct LoginView: View {
                         Color("elOrango")
                             .cornerRadius(10)
                     )
+                
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.black, lineWidth: 3)
@@ -62,26 +71,57 @@ struct LoginView: View {
                     .foregroundColor(.white)
             }
             Button(action: {
-            }) {
-                Text("Sign Up")
-                    .font(.custom("Tanker", size: 20))
-                    .foregroundColor(.white)
-                    .frame(width: 110, height: 50)
-                    .background(
-                        Color("elOrango")
-                            .cornerRadius(10)
-                    )
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.black, lineWidth: 3)
-                    )
-            }
+                            isShowingSignUp = true // Sign-Up View anzeigen
+                        }) {
+                            Text("Sign Up")
+                                .font(.custom("Tanker", size: 20))
+                                .foregroundColor(.white)
+                                .frame(width: 110, height: 50)
+                                .background(
+                                    Color("elOrango")
+                                        .cornerRadius(10)
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.black, lineWidth: 3)
+                                )
+                        }
+                        .fullScreenCover(isPresented: $isShowingSignUp) {
+                            RegisterView(isPresented: $isShowingSignUp) // Präsentiere SignUp View
+                        }
             
             Spacer()
         }
         .background(Color("myGray").edgesIgnoringSafeArea(.all))
     }
+    
+    private func attemptSignIn() {
+        Task {
+            hasPressedSignIn = true
+            do {
+                try await FirebaseAuthManager.shared.signIn(email: email, password: password)
+            } catch {
+                lastErrorMessage = error.localizedDescription
+                isPresentingError = true
+            }
+            hasPressedSignIn = false
+        }
+    }
+    
+    private func attemptSignUp() {
+        Task {
+            hasPressedSignUp = true
+            do {
+                try await FirebaseAuthManager.shared.signUp(email: email, password: password)
+            } catch {
+                lastErrorMessage = error.localizedDescription
+                isPresentingError = true
+            }
+            hasPressedSignUp = false
+        }
+    }
 }
+
 
 #Preview {
     LoginView()

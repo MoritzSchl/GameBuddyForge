@@ -16,7 +16,6 @@ struct GamesListView: View {
             ZStack{
                 Color("myGray")
                     .ignoresSafeArea()
-                
                 VStack{
                     Text("Games List")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -40,7 +39,20 @@ struct GamesListView: View {
                 .navigationDestination(for: Game.self){ game in
                     GameDetailView(game: game)
                 }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: logOut) {
+                            Text("Log Out")
+                                .foregroundColor(.white)
+                        }
+                    }
+                }
             }
+        }
+    }
+    private func logOut() {
+        Task {
+            FirebaseAuthManager.shared.signOut()
         }
     }
 }
