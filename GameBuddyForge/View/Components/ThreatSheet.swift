@@ -2,13 +2,14 @@ import SwiftUI
 
 struct ThreatSheet: View {
     var game: Game
-    @State private var activity = ""
-    @State private var playerCount = 1
-    @State private var description = ""
-    @State private var gamertag = ""
+    @State var activity = ""
+    @State var playerCount = 1
+    @State var description = ""
+    @State var gamertag = ""
     @Environment(\.dismiss) var dismiss
     
     let playerOptions = Array(1...10)
+    let viewModel = ThreatViewModel()
     
     var body: some View {
         NavigationView {
@@ -77,6 +78,7 @@ struct ThreatSheet: View {
                 HStack {
                     
                     Button(action: {
+                        viewModel.saveThreat(gametitle: game.title, title: activity, playerCount: playerCount, description: description, gamerTag: gamertag)
                         dismiss()
                     }) {
                         Text("Save")
