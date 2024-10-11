@@ -18,7 +18,6 @@ struct OnboardingView: View {
                         .frame(width: 365, height: 365)
                         .scaleEffect(logoScale)
                         .onAppear {
-                            // Logo zoom-in animation
                             withAnimation(.easeOut(duration: 1.0)) {
                                 logoScale = 1.0
                             }
@@ -39,7 +38,6 @@ struct OnboardingView: View {
                     }
                     .multilineTextAlignment(.center)
                     .onAppear {
-                        // Text fade-in and slide-up animation
                         withAnimation(.easeInOut(duration: 1.5).delay(0.5)) {
                             textOpacity = 1.0
                         }
@@ -60,13 +58,12 @@ struct OnboardingView: View {
                             )
                             .scaleEffect(buttonScale)
                             .onAppear {
-                                // Button pulse animation
                                 withAnimation(.easeInOut(duration: 1.2).repeatForever(autoreverses: true)) {
                                     buttonScale = 1.1
                                 }
                             }
                     }
-                    .padding(.top, 30) // Optional extra padding
+                    .padding(.top, 30)
                     
                     Spacer()
                 }

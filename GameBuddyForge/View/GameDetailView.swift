@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GameDetailView: View {
     var game: Game
+    
     @State private var showAddThreatSheet = false
     
     var body: some View {
@@ -19,7 +20,7 @@ struct GameDetailView: View {
                                     .scaledToFit()
                                     .frame(maxWidth: .infinity)
                                     .cornerRadius(20)
-                                    .shadow(color:.elOrango,radius: 20 )
+                                    .shadow(color: .elOrango, radius: 20)
                             } placeholder: {
                                 Image(systemName: "photo")
                                     .resizable()
@@ -28,8 +29,8 @@ struct GameDetailView: View {
                                     .background(Color.gray.opacity(0.3))
                             }
                         }
+                        .padding(.horizontal)
                     }
-                    
                     
                     HStack {
                         VStack(alignment: .leading, spacing: 8) {
@@ -47,20 +48,7 @@ struct GameDetailView: View {
                         Spacer()
                         
                         
-                        Button(action: {
-                            showAddThreatSheet = true
-                        }) {
-                            Image(systemName: "plus")
-                                .font(.system(size: 24))
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color("elOrango").opacity(0.4))
-                                .clipShape(Circle())
-                                .shadow(radius: 10)
-                        }
-                        .padding(.trailing)
                     }
-                    
                     
                     HStack {
                         Text(game.genre.rawValue)
@@ -100,12 +88,33 @@ struct GameDetailView: View {
                             .foregroundColor(.white)
                             .underline()
                             .padding(.horizontal)
-                        
                         Text("Release Date: \(game.releaseDate)")
                             .font(.custom("Tanker", size: 18))
                             .foregroundColor(.white)
                             .underline()
                             .padding(.horizontal)
+                    }
+                    VStack {
+                        Button(action: {
+                            showAddThreatSheet = true
+                        }) {
+                            VStack {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 24))
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color("elOrango").opacity(1))
+                                    .clipShape(Circle())
+                                    .shadow(radius: 10)
+                                
+                                Text("Create Threat")
+                                    .font(.custom("Tanker", size: 18))
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.top, 8)
+                        }
+                        .padding(.horizontal)
+                        .padding(.bottom, 16)
                     }
                     
                     Link(destination: URL(string: game.gameURL)!) {

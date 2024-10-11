@@ -5,6 +5,7 @@ struct GamesRow: View {
     
     var body: some View {
         ZStack {
+            // Hintergrundbild
             if let imageUrl = URL(string: game.thumbnail) {
                 AsyncImage(url: imageUrl) { image in
                     image
@@ -30,32 +31,33 @@ struct GamesRow: View {
                 
                 HStack {
                     Text(game.genre.rawValue)
-                        .font(.caption)
-                        .foregroundColor(.white)
-                        .padding(6)
-                        .background(Color("elOrango").opacity(0.6))
+                        .font(.custom("Tanker", size: 18))     .foregroundColor(.white)
+                        .padding(10)
+                        .background(Color("elOrango").opacity(0.9))
                         .cornerRadius(5)
-                        .padding(.leading, 8)
-                    
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, -2)
+                        .padding(.bottom, -10)
                     Spacer()
-                    
                     Text(game.publisher)
-                        .font(.caption)
+                        .font(.custom("Tanker", size: 18))
                         .foregroundColor(.white)
-                        .padding(6)
-                        .background(Color("elOrango").opacity(0.6))
+                        .padding(10)
+                        .background(Color("elOrango").opacity(0.9))
                         .cornerRadius(5)
-                        .padding(.trailing, 8)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding(.trailing, -2)
+                        .padding(.bottom, -10)
                 }
                 .padding(.bottom, 8)
             }
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.white, lineWidth: 3)
-            )
         }
         .frame(height: 200)
         .cornerRadius(20)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.white, lineWidth: 3)
+        )
         .clipped()
     }
 }
