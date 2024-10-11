@@ -51,6 +51,8 @@
 		E4FA7F962CAAD0D400886386 /* ThreatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA7F952CAAD0D400886386 /* ThreatRepository.swift */; };
 		E4FA7F982CAAD2DD00886386 /* Threat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA7F972CAAD2DD00886386 /* Threat.swift */; };
 		E4FA7F9A2CAADB7B00886386 /* ThreatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA7F992CAADB7B00886386 /* ThreatViewModel.swift */; };
+		E4FA7F9C2CB3E25B00886386 /* ThreatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA7F9B2CB3E25B00886386 /* ThreatListView.swift */; };
+		E4FA7FA02CB3F33300886386 /* ThreatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA7F9F2CB3F33300886386 /* ThreatRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		E4FA7F952CAAD0D400886386 /* ThreatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatRepository.swift; sourceTree = "<group>"; };
 		E4FA7F972CAAD2DD00886386 /* Threat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threat.swift; sourceTree = "<group>"; };
 		E4FA7F992CAADB7B00886386 /* ThreatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatViewModel.swift; sourceTree = "<group>"; };
+		E4FA7F9B2CB3E25B00886386 /* ThreatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatListView.swift; sourceTree = "<group>"; };
+		E4FA7F9F2CB3F33300886386 /* ThreatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +128,6 @@
 		E4CFA9A12C8AFE1500F69D9D = {
 			isa = PBXGroup;
 			children = (
-				E4CFA9D72C8B13E600F69D9D /* image */,
 				E4CFA9AC2C8AFE1500F69D9D /* GameBuddyForge */,
 				E4F7DBFD2CA2D87D008CDBA4 /* Frameworks */,
 				E4FA7F942CA6A79600886386 /* GameBuddyForge.app */,
@@ -134,9 +137,10 @@
 		E4CFA9AC2C8AFE1500F69D9D /* GameBuddyForge */ = {
 			isa = PBXGroup;
 			children = (
+				E4CFA9AD2C8AFE1500F69D9D /* GameBuddyForgeApp.swift */,
 				E4CFA9F92C9438E700F69D9D /* Info.plist */,
 				E4F7DC622CA2DE0B008CDBA4 /* GoogleService-Info.plist */,
-				E4CFA9AD2C8AFE1500F69D9D /* GameBuddyForgeApp.swift */,
+				E4CFA9D72C8B13E600F69D9D /* image */,
 				E4AF31522CA2CE02007DC8B9 /* Services */,
 				E4CFA9F42C9437F500F69D9D /* Font */,
 				E4CFA9E32C8F07F300F69D9D /* View */,
@@ -201,6 +205,7 @@
 				E4CFA9AF2C8AFE1500F69D9D /* GamesListView.swift */,
 				E4CFA9EC2C90583900F69D9D /* GameDetailView.swift */,
 				E4CFA9FE2C9B044B00F69D9D /* RegisterScreen.swift */,
+				E4FA7F9B2CB3E25B00886386 /* ThreatListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 			children = (
 				E4CFA9E42C8F0B0700F69D9D /* GamesRow.swift */,
 				E4AF31192C9D877D007DC8B9 /* ThreatSheet.swift */,
+				E4FA7F9F2CB3F33300886386 /* ThreatRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -344,8 +350,10 @@
 				E4CFA9B02C8AFE1500F69D9D /* GamesListView.swift in Sources */,
 				E4CFA9FF2C9B044B00F69D9D /* RegisterScreen.swift in Sources */,
 				E4CFA9F02C91A52300F69D9D /* OnboardingView.swift in Sources */,
+				E4FA7FA02CB3F33300886386 /* ThreatRow.swift in Sources */,
 				E4CFA9F22C91A74E00F69D9D /* LogInView.swift in Sources */,
 				E4CFA9DC2C8EE03600F69D9D /* Game.swift in Sources */,
+				E4FA7F9C2CB3E25B00886386 /* ThreatListView.swift in Sources */,
 				E4CFA9AE2C8AFE1500F69D9D /* GameBuddyForgeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

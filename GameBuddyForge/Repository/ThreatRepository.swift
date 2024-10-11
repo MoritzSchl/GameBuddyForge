@@ -27,13 +27,19 @@ class ThreatRepository {
         try await dbCollection.document(id).delete()
     }
     
+    func fetchThreats() async throws -> [Threat] {
+            let snapshot = try await dbCollection.getDocuments()
+            return snapshot.documents.compactMap { document in
+                try? document.data(as: Threat.self)
+            }
+        }
+    }
+    
     
     
     
     private let dbCollection = Firestore.firestore().collection("threats")
     
-    
-}
 
 
 enum DataError: LocalizedError {

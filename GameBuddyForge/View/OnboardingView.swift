@@ -1,36 +1,50 @@
-//
-//  OnboardingVIew.swift
-//  GameBuddyForge
-//
-//  Created by Moritz Schleimer on 11.09.24.
-//
-
 import SwiftUI
 
 struct OnboardingView: View {
+    @State private var logoScale: CGFloat = 0.5
+    @State private var textOpacity: Double = 0
+    @State private var buttonScale: CGFloat = 1.0
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 Color("myGray").edgesIgnoringSafeArea(.all)
+                
                 VStack {
                     Spacer()
                     
                     Image("GBF")
                         .resizable()
                         .frame(width: 365, height: 365)
+                        .scaleEffect(logoScale)
+                        .onAppear {
+                            // Logo zoom-in animation
+                            withAnimation(.easeOut(duration: 1.0)) {
+                                logoScale = 1.0
+                            }
+                        }
                         .padding(.bottom, 80)
                     
                     VStack(spacing: 0) {
                         Text("Willkommen bei")
                             .font(.custom("Tanker", size: 35))
                             .foregroundColor(.white)
-                            .padding(.bottom, 4)
+                            .opacity(textOpacity)
+                        
                         Text("GameBuddyForge")
                             .font(.custom("Tanker", size: 35))
                             .bold()
                             .foregroundColor(.white)
+                            .opacity(textOpacity)
                     }
                     .multilineTextAlignment(.center)
+                    .onAppear {
+                        // Text fade-in and slide-up animation
+                        withAnimation(.easeInOut(duration: 1.5).delay(0.5)) {
+                            textOpacity = 1.0
+                        }
+                    }
+                    
                     NavigationLink(destination: LoginView()) {
                         Text("Enjoy your Game")
                             .font(.custom("Tanker", size: 20))
@@ -44,7 +58,15 @@ struct OnboardingView: View {
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color.black, lineWidth: 3)
                             )
+                            .scaleEffect(buttonScale)
+                            .onAppear {
+                                // Button pulse animation
+                                withAnimation(.easeInOut(duration: 1.2).repeatForever(autoreverses: true)) {
+                                    buttonScale = 1.1
+                                }
+                            }
                     }
+                    .padding(.top, 30) // Optional extra padding
                     
                     Spacer()
                 }

@@ -1,14 +1,6 @@
-//
-//  GamesRow.swift
-//  GameBuddyForge
-//
-//  Created by Moritz Schleimer on 09.09.24.
-//
-
 import SwiftUI
 
 struct GamesRow: View {
-    
     var game: Game
     
     var body: some View {
@@ -24,7 +16,6 @@ struct GamesRow: View {
                     ProgressView()
                         .frame(maxWidth: .infinity, maxHeight: 200)
                         .tint(.white)
-
                 }
             } else {
                 Image(systemName: "photo")
@@ -35,7 +26,6 @@ struct GamesRow: View {
             }
             
             VStack {
-
                 Spacer()
                 
                 HStack {
@@ -49,7 +39,7 @@ struct GamesRow: View {
                     
                     Spacer()
                     
-                    Text( game.publisher)
+                    Text(game.publisher)
                         .font(.caption)
                         .foregroundColor(.white)
                         .padding(6)
@@ -61,7 +51,7 @@ struct GamesRow: View {
             }
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(.white)
+                    .stroke(Color.white, lineWidth: 3)
             )
         }
         .frame(height: 200)

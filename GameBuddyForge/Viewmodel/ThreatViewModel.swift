@@ -7,15 +7,15 @@
 
 import Foundation
 
-class ThreatViewModel {
-    
-    
+class ThreatViewModel: ObservableObject {
+    @Published var threats = [Threat]()
+
     var error: LocalizedError?
-    
-    
     var isSaving = false
     var didSaveSuccessfully = false
     
+    let repo = ThreatRepository()
+
     func saveThreat(gametitle: String, title: String, playerCount: Int, description: String, gamerTag: String) {
         Task {
             isSaving = true
@@ -30,6 +30,19 @@ class ThreatViewModel {
             }
         }
     }
-    let repo = ThreatRepository()
+
+    func fetchThreats() {
+        Task {
+            do {
+                let fetchedThreats = try await repo.fetchThreats()
+                DispatchQueue.main.async {
+                    self.threats = fetchedThreats
+                }
+            } catch {
+                print("Error fetching threats: \(error)")
+            }
+        }
+    }
 }
+
 
