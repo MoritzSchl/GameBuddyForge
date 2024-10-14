@@ -35,9 +35,6 @@ class ThreatRepository {
         }
     }
     
-    
-    
-    
     private let dbCollection = Firestore.firestore().collection("threats")
     
 

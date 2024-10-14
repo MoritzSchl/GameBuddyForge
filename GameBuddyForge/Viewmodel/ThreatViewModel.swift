@@ -9,13 +9,13 @@ import Foundation
 
 class ThreatViewModel: ObservableObject {
     @Published var threats = [Threat]()
-
+    
     var error: LocalizedError?
     var isSaving = false
     var didSaveSuccessfully = false
     
     let repo = ThreatRepository()
-
+    
     func saveThreat(gametitle: String, title: String, playerCount: Int, description: String, gamerTag: String) {
         Task {
             isSaving = true
@@ -30,7 +30,7 @@ class ThreatViewModel: ObservableObject {
             }
         }
     }
-
+    
     func fetchThreats() {
         Task {
             do {

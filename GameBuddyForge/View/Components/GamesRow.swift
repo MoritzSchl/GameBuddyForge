@@ -1,11 +1,12 @@
 import SwiftUI
 
 struct GamesRow: View {
+    
     var game: Game
     
     var body: some View {
         ZStack {
-            // Hintergrundbild
+            
             if let imageUrl = URL(string: game.thumbnail) {
                 AsyncImage(url: imageUrl) { image in
                     image

@@ -15,7 +15,6 @@ struct ThreatListView: View {
                         .foregroundColor(.white)
                         .bold()
                         .padding(.top, 20)
-
                     ScrollView {
                         VStack(spacing: 16) {
                             if viewModel.threats.isEmpty {

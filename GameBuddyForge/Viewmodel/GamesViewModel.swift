@@ -29,7 +29,7 @@ class GamesViewModel: ObservableObject {
     private func load() async {
         status = .isLoading
         do {
-                games = try await repository.fetchGames()
+            games = try await repository.fetchGames()
         } catch {
             let error = error as! GamesRepoError
             status = .error

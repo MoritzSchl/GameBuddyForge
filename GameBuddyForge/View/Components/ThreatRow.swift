@@ -3,7 +3,7 @@ import SwiftUI
 struct ThreatRow: View {
     
     var threat: Threat
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -13,28 +13,23 @@ struct ThreatRow: View {
                         .foregroundColor(.white)
                         .padding(.top, 0)
                         .frame(maxWidth: .infinity, alignment: .center)
-                    
                     Text(threat.title)
                         .font(.custom("Tanker", size: 18))
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .padding(.top, 5)
-
                     Text("Player Count: \(threat.playerCount)")
                         .font(.custom("Tanker", size: 18))
                         .foregroundColor(.white)
-
                     Text(threat.description)
                         .font(.custom("Tanker", size: 20))
                         .foregroundColor(.white)
                         .lineLimit(2)
-
                     Text("GamerTag: \(threat.gamerTag)")
                         .font(.custom("Tanker", size: 18))
                         .foregroundColor(.white)
                 }
                 .padding(.vertical)
-                
                 Spacer()
             }
             .padding()

@@ -29,7 +29,7 @@ class FirebaseAuthManager {
         print("User with email '\(email)' is registered with id '\(authResult.user.uid)'")
         try await self.signIn(email: email, password: password)
     }
-
+    
     func signIn(email: String, password: String) async throws {
         let authResult = try await auth.signIn(withEmail: email, password: password)
         guard let email = authResult.user.email else { throw AuthError.noEmail }
@@ -60,7 +60,7 @@ class FirebaseAuthManager {
     }
     
     private let auth = Auth.auth()
-
+    
 }
 
 enum AuthError: LocalizedError {

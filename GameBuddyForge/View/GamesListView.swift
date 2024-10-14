@@ -12,12 +12,10 @@ struct GamesListView: View {
             ZStack {
                 Color("myGray")
                     .ignoresSafeArea()
-                
                 VStack {
                     Text("Games List")
                         .font(.custom("Tanker", size: 30))
                         .foregroundStyle(.white)
-                    
                     ScrollView {
                         VStack(spacing: 16) {
                             ForEach(viewModel.games) { game in

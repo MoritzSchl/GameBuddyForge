@@ -4,6 +4,7 @@ struct GameDetailView: View {
     var game: Game
     
     @State private var showAddThreatSheet = false
+    @State private var isAnimating = false
     
     var body: some View {
         ZStack {
@@ -44,10 +45,7 @@ struct GameDetailView: View {
                                 .foregroundColor(.white.opacity(0.7))
                                 .padding(.horizontal)
                         }
-                        
                         Spacer()
-                        
-                        
                     }
                     
                     HStack {
@@ -57,9 +55,7 @@ struct GameDetailView: View {
                             .padding(6)
                             .background(Color("elOrango").opacity(0.4))
                             .cornerRadius(8)
-                        
                         Spacer()
-                        
                         Text(game.platform.rawValue)
                             .font(.custom("Tanker", size: 14))
                             .foregroundColor(.white)
@@ -75,7 +71,6 @@ struct GameDetailView: View {
                             .foregroundColor(.white)
                             .underline()
                             .padding(.horizontal)
-                        
                         Text(game.shortDescription)
                             .font(.custom("Tanker", size: 18))
                             .foregroundColor(.white)
@@ -94,29 +89,8 @@ struct GameDetailView: View {
                             .underline()
                             .padding(.horizontal)
                     }
-                    VStack {
-                        Button(action: {
-                            showAddThreatSheet = true
-                        }) {
-                            VStack {
-                                Image(systemName: "plus")
-                                    .font(.system(size: 24))
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color("elOrango").opacity(1))
-                                    .clipShape(Circle())
-                                    .shadow(radius: 10)
-                                
-                                Text("Create Threat")
-                                    .font(.custom("Tanker", size: 18))
-                                    .foregroundColor(.white)
-                            }
-                            .padding(.top, 8)
-                        }
-                        .padding(.horizontal)
-                        .padding(.bottom, 16)
-                    }
-                    
+                    Spacer()
+    
                     Link(destination: URL(string: game.gameURL)!) {
                         HStack {
                             Image(systemName: "link")
@@ -132,8 +106,36 @@ struct GameDetailView: View {
                         )
                         .padding(.horizontal)
                     }
-                    
                     Spacer()
+                   
+                    VStack {
+                        Button(action: {
+                            showAddThreatSheet = true
+                        }) {
+                            HStack {
+                                Image(systemName: "plus.circle")
+                                    .font(.system(size: 22))
+                                    .foregroundColor(.white)
+                                Text("Create Thread for this Game")
+                                    .font(.custom("Tanker", size: 18))
+                                    .foregroundColor(.white)
+                            }
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(
+                                Color("elOrango")
+                                    .cornerRadius(10)
+                            )
+                            .padding(.horizontal)
+                            .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 5)
+                        }
+                        .scaleEffect(isAnimating ? 1.05 : 1.0)
+                        .animation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true), value: isAnimating)
+                        .onAppear {
+                            isAnimating = true
+                        }
+                    }
+                    .padding(.bottom, 16)
                 }
                 .padding(.top)
             }
