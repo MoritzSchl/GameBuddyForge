@@ -42,7 +42,7 @@ struct GameDetailView: View {
                             
                             Text("Developer: \(game.publisher)")
                                 .font(.custom("Tanker", size: 16))
-                                .foregroundColor(.white.opacity(0.7))
+                                .foregroundColor(.white)
                                 .padding(.horizontal)
                         }
                         Spacer()
@@ -75,9 +75,6 @@ struct GameDetailView: View {
                             .font(.custom("Tanker", size: 18))
                             .foregroundColor(.white)
                             .padding(.horizontal)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 8) {
                         Text("Publisher: \(game.publisher)")
                             .font(.custom("Tanker", size: 18))
                             .foregroundColor(.white)
@@ -89,6 +86,8 @@ struct GameDetailView: View {
                             .underline()
                             .padding(.horizontal)
                     }
+                    
+                    
                     Spacer()
     
                     Link(destination: URL(string: game.gameURL)!) {

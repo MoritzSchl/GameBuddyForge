@@ -1,20 +1,19 @@
-//
-//  ThreatViewModel.swift
-//  GameBuddyForge
-//
-//  Created by Moritz Schleimer on 30.09.24.
-//
-
+import FirebaseFirestore
 import Foundation
 
 class ThreatViewModel: ObservableObject {
     @Published var threats = [Threat]()
+    @Published var error: LocalizedError?
+    @Published var isSaving = false
+    @Published var didSaveSuccessfully = false
+    @Published var editThreat: Threat?
+    @Published var isEditSheetPresented = false
     
-    var error: LocalizedError?
-    var isSaving = false
-    var didSaveSuccessfully = false
+    private let repository: ThreatRepository
     
-    let repo = ThreatRepository()
+    init(repository: ThreatRepository = ThreatRepository()) {
+        self.repository = repository
+    }
     
     func saveThreat(gametitle: String, title: String, playerCount: Int, description: String, gamerTag: String) {
         Task {
@@ -22,27 +21,58 @@ class ThreatViewModel: ObservableObject {
             defer { isSaving = false }
             
             do {
-                let threat = Threat(gametitle: gametitle, title: title, playerCount: playerCount, description: description, gamerTag: gamerTag)
-                try repo.createThreat(threat)
+                guard let userID = FirebaseAuthManager.shared.userID else {
+                    print("User is not authenticated.")
+                    return
+                }
+
+                let threat = Threat(gametitle: gametitle, title: title, playerCount: playerCount, description: description, gamerTag: gamerTag, userID: userID)
+                try repository.createThreat(threat)
                 didSaveSuccessfully = true
+                await fetchThreats()
             } catch let error as LocalizedError {
                 self.error = error
             }
         }
     }
+
     
-    func fetchThreats() {
+    func deleteThreat(_ threat: Threat) {
         Task {
             do {
-                let fetchedThreats = try await repo.fetchThreats()
-                DispatchQueue.main.async {
-                    self.threats = fetchedThreats
-                }
+                try await repository.deleteThreat(threat)
+                await fetchThreats()
             } catch {
-                print("Error fetching threats: \(error)")
+                print("Error deleting threat: \(error)")
             }
         }
     }
+    
+    func editThreat(_ threat: Threat) {
+        self.editThreat = threat
+        self.isEditSheetPresented = true
+    }
+    
+    func fetchThreats() async {
+        do {
+            let fetchedThreats = try await repository.fetchThreats()
+            DispatchQueue.main.async {
+                self.threats = fetchedThreats
+            }
+        } catch {
+            print("Error fetching threats: \(error)")
+        }
+    }
+    
+    func updateThreat(_ threat: Threat) {
+            Task {
+                do {
+                    try await repository.updateThreat(threat)
+                    await fetchThreats()
+                } catch {
+                    print("Error updating threat: \(error)")
+                }
+            }
+        }
 }
-
 

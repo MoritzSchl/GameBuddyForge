@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4141C812CBD33C000575C9D /* EditThreatSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4141C802CBD33BF00575C9D /* EditThreatSheet.swift */; };
 		E4AF311A2C9D877D007DC8B9 /* ThreatSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AF31192C9D877D007DC8B9 /* ThreatSheet.swift */; };
 		E4AF31212CA2C02D007DC8B9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E4AF31202CA2C02D007DC8B9 /* FirebaseAnalytics */; };
 		E4AF31232CA2C02D007DC8B9 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = E4AF31222CA2C02D007DC8B9 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4141C802CBD33BF00575C9D /* EditThreatSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditThreatSheet.swift; sourceTree = "<group>"; };
 		E4AF31192C9D877D007DC8B9 /* ThreatSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreatSheet.swift; sourceTree = "<group>"; };
 		E4AF314E2CA2CB0E007DC8B9 /* FireBaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseAuthService.swift; sourceTree = "<group>"; };
 		E4CFA9AD2C8AFE1500F69D9D /* GameBuddyForgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBuddyForgeApp.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				E4CFA9E42C8F0B0700F69D9D /* GamesRow.swift */,
 				E4AF31192C9D877D007DC8B9 /* ThreatSheet.swift */,
 				E4FA7F9F2CB3F33300886386 /* ThreatRow.swift */,
+				E4141C802CBD33BF00575C9D /* EditThreatSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				E4CFA9FF2C9B044B00F69D9D /* RegisterScreen.swift in Sources */,
 				E4CFA9F02C91A52300F69D9D /* OnboardingView.swift in Sources */,
 				E4FA7FA02CB3F33300886386 /* ThreatRow.swift in Sources */,
+				E4141C812CBD33C000575C9D /* EditThreatSheet.swift in Sources */,
 				E4CFA9F22C91A74E00F69D9D /* LogInView.swift in Sources */,
 				E4CFA9DC2C8EE03600F69D9D /* Game.swift in Sources */,
 				E4FA7F9C2CB3E25B00886386 /* ThreatListView.swift in Sources */,

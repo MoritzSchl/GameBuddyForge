@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct ThreatRow: View {
-    
     var threat: Threat
+    var currentUserID: String
+    @State private var showEditThreatSheet = false
+    @ObservedObject var viewModel: ThreatViewModel
+    
     
     var body: some View {
         VStack {
@@ -30,11 +33,35 @@ struct ThreatRow: View {
                         .foregroundColor(.white)
                 }
                 .padding(.vertical)
+                
                 Spacer()
+                
+                if threat.userID == currentUserID {
+                    VStack {
+                        Button(action: {
+                            showEditThreatSheet = true
+                        }) {
+                            Text("Edit")
+                                .font(.custom("Tanker", size: 14))
+                                .foregroundColor(.blue)
+                        }
+                        Button(action: {
+                            Task{
+                                viewModel.deleteThreat(threat)
+                            }
+                        }) {
+                            Text("Delete")
+                                .font(.custom("Tanker", size: 14))
+                                .foregroundColor(.red)
+                        }
+                    }
+                }
             }
             .padding()
             .background(
-                LinearGradient(gradient: Gradient(colors: [Color("elOrango"), Color("darkOrange")]), startPoint: .top, endPoint: .bottom)
+                threat.userID == currentUserID ?
+                LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .top, endPoint: .bottom) :
+                    LinearGradient(gradient: Gradient(colors: [Color("elOrango"), Color("darkOrange")]), startPoint: .top, endPoint: .bottom)
             )
             .cornerRadius(15)
             .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
@@ -43,11 +70,11 @@ struct ThreatRow: View {
                     .stroke(Color.white.opacity(0.7), lineWidth: 2)
             )
         }
+        .sheet(isPresented: $showEditThreatSheet){
+            EditThreatSheet(viewModel: viewModel, threat: threat)
+        }
         .padding(.horizontal)
         .padding(.bottom, 8)
     }
 }
 
-#Preview {
-    ThreatRow(threat: Threat(gametitle: "Beispielspiel", title: "Beispiel Bedrohung", playerCount: 4, description: "Dies ist eine Beispielbeschreibung für eine Bedrohung.", gamerTag: "BeispielGamerTag"))
-}

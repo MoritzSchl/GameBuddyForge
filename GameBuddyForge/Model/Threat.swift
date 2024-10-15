@@ -5,15 +5,16 @@
 //  Created by Moritz Schleimer on 30.09.24.
 //
 
-import Foundation
-import FirebaseFirestore
+struct Threat: Identifiable, Codable {
+    var id: String?
+    var gametitle: String
+    var title: String
+    var playerCount: Int
+    var description: String
+    var gamerTag: String
+    var userID: String
 
-struct Threat: Codable {
-    
-    let gametitle: String
-    let title: String
-    let playerCount: Int
-    let description: String
-    let gamerTag: String
+    var isOwnedByCurrentUser: Bool {
+        return FirebaseAuthManager.shared.userID == userID
+    }
 }
-

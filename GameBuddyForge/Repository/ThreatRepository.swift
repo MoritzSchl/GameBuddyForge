@@ -18,22 +18,30 @@ class ThreatRepository {
     }
     
     func updateThreat(_ threat: Threat) async throws {
-        guard let id = FirebaseAuthManager.shared.userID else { throw DataError.noDocumentID }
-        try dbCollection.document(id).setData(from: threat)
+        guard let threatID = threat.id else { throw DataError.noDocumentID }
+        try dbCollection.document(threatID).setData(from: threat, merge: true)
     }
     
+    
     func deleteThreat(_ threat: Threat) async throws {
-        guard let id = FirebaseAuthManager.shared.userID else { throw DataError.noDocumentID }
-        try await dbCollection.document(id).delete()
+        guard let threatID = threat.id else { throw DataError.noDocumentID }
+        try await dbCollection.document(threatID).delete()
     }
     
     func fetchThreats() async throws -> [Threat] {
-            let snapshot = try await dbCollection.getDocuments()
-            return snapshot.documents.compactMap { document in
-                try? document.data(as: Threat.self)
+        let snapshot = try await dbCollection.getDocuments()
+        
+        return snapshot.documents.compactMap { document in
+            let threat = try? document.data(as: Threat.self)
+            if var threat = threat {
+                threat.id = document.documentID
+                return threat
+            } else {
+                return nil
             }
         }
     }
+}
     
     private let dbCollection = Firestore.firestore().collection("threats")
     
