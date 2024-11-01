@@ -37,6 +37,18 @@ struct GamesListView: View {
                 .scrollContentBackground(.hidden)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: logOut) {
+                            HStack {
+                                Image(systemName: "person.crop.circle.badge.xmark")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.white)
+                                Text("Log Out")
+                                    .font(.custom("Tanker", size: 20))
+                                    .foregroundColor(.white)
+                            }
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
                             isShowingThreatList = true
                         }) {
@@ -45,18 +57,6 @@ struct GamesListView: View {
                                     .font(.system(size: 20))
                                     .foregroundColor(.white)
                                 Text("LFG")
-                                    .font(.custom("Tanker", size: 20))
-                                    .foregroundColor(.white)
-                            }
-                        }
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: logOut) {
-                            HStack {
-                                Image(systemName: "person.crop.circle.badge.xmark")
-                                    .font(.system(size: 20))
-                                    .foregroundColor(.white)
-                                Text("Log Out")
                                     .font(.custom("Tanker", size: 20))
                                     .foregroundColor(.white)
                             }

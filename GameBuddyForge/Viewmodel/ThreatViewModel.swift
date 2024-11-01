@@ -25,7 +25,7 @@ class ThreatViewModel: ObservableObject {
                     print("User is not authenticated.")
                     return
                 }
-
+                
                 let threat = Threat(gametitle: gametitle, title: title, playerCount: playerCount, description: description, gamerTag: gamerTag, userID: userID)
                 try repository.createThreat(threat)
                 didSaveSuccessfully = true
@@ -35,7 +35,7 @@ class ThreatViewModel: ObservableObject {
             }
         }
     }
-
+    
     
     func deleteThreat(_ threat: Threat) {
         Task {
@@ -57,22 +57,31 @@ class ThreatViewModel: ObservableObject {
         do {
             let fetchedThreats = try await repository.fetchThreats()
             DispatchQueue.main.async {
-                self.threats = fetchedThreats
+                self.threats = fetchedThreats.sorted { (threat1, threat2) in
+                    let isThreat1OwnedByCurrentUser = threat1.isOwnedByCurrentUser
+                    let isThreat2OwnedByCurrentUser = threat2.isOwnedByCurrentUser
+                    if isThreat1OwnedByCurrentUser && !isThreat2OwnedByCurrentUser {
+                        return true
+                    } else if !isThreat1OwnedByCurrentUser && isThreat2OwnedByCurrentUser {
+                        return false
+                    }
+                    return false
+                }
             }
         } catch {
             print("Error fetching threats: \(error)")
         }
     }
     
+    
     func updateThreat(_ threat: Threat) {
-            Task {
-                do {
-                    try await repository.updateThreat(threat)
-                    await fetchThreats()
-                } catch {
-                    print("Error updating threat: \(error)")
-                }
+        Task {
+            do {
+                try await repository.updateThreat(threat)
+                await fetchThreats()
+            } catch {
+                print("Error updating threat: \(error)")
             }
         }
+    }
 }
-

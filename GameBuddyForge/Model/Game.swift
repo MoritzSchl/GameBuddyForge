@@ -19,12 +19,12 @@ struct Game: Codable, Identifiable, Hashable{
     let releaseDate: String
     
     enum CodingKeys: String, CodingKey {
-            case id, title, thumbnail
-            case shortDescription = "short_description"
-            case gameURL = "game_url"
-            case genre, platform, publisher
-            case releaseDate = "release_date"
-        }
+        case id, title, thumbnail
+        case shortDescription = "short_description"
+        case gameURL = "game_url"
+        case genre, platform, publisher
+        case releaseDate = "release_date"
+    }
     
 }
 

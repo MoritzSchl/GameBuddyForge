@@ -10,12 +10,11 @@ struct ThreatListView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    Text("Game Threats")
+                    Text("Game Threads")
                         .font(.custom("Tanker", size: 35))
                         .foregroundColor(.white)
                         .bold()
                         .padding(.top, 20)
-                    
                     ScrollView {
                         VStack(spacing: 16) {
                             if viewModel.threats.isEmpty {
@@ -48,4 +47,8 @@ struct ThreatListView: View {
             }
         }
     }
+}
+
+#Preview {
+    ThreatListView(viewModel: ThreatViewModel())
 }

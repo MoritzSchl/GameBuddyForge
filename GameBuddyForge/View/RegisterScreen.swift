@@ -18,16 +18,13 @@ struct RegisterView: View {
         ZStack {
             Color("myGray")
                 .ignoresSafeArea()
-            
             VStack(spacing: 20) {
                 Spacer()
-                
                 Text("Create an Account")
                     .font(.custom("Tanker", size: 35))
                     .foregroundColor(.white)
                     .bold()
                     .padding(.bottom, 40)
-                
                 TextField("Email", text: $email)
                     .padding()
                     .background(Color.white)
@@ -36,14 +33,13 @@ struct RegisterView: View {
                     .padding(.horizontal)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
-                
                 SecureField("Password", text: $password)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(8)
                     .foregroundColor(.black)
                     .padding(.horizontal)
-                
+
                 SecureField("Confirm Password", text: $confirmPassword)
                     .padding()
                     .background(Color.white)

@@ -19,9 +19,8 @@ struct LoginView: View {
             Image("GBF")
                 .resizable()
                 .frame(width: 200, height: 200)
-                .rotationEffect(.degrees(isAnimating ? 10 : -10))
-                .opacity(isAnimating ? 1.2 : 0.8)
-                .animation(Animation.easeInOut(duration: 3).repeatForever(autoreverses: true), value: isAnimating)
+                .opacity(isAnimating ? 1.0 : 0.0)
+                .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: true), value: isAnimating)
                 .onAppear {
                     isAnimating = true
                 }
